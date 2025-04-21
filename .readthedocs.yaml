@@ -14,7 +14,7 @@ build:
 sphinx:
    configuration: source/conf.py
 
-format:
+formats:
   - pdf
 # Optionally, but recommended,
 # declare the Python requirements required to build your documentation
