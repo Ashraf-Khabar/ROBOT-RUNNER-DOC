@@ -18,10 +18,16 @@ extensions = []
 templates_path = ['_templates']
 exclude_patterns = []
 
+html_logo = "_static/logo.png"
 
-
+html_theme_options = {
+    "logo_only": True,  # Display only logo (no project name)
+    "style_nav_header_background": "#FFFFFF",  # Match logo background
+}
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+html_css_files = ["custom.css"]
