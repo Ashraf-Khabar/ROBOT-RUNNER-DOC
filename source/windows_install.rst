@@ -4,42 +4,54 @@ Windows Installation
 Prerequisites
 -------------
 
-- Python 3.8+ (Download from `python.org <https://www.python.org/downloads/>`_)
-- Git for Windows (`Download <https://git-scm.com/download/win>`_)
+- Python 3.8+ (`Download from python.org <https://www.python.org/downloads/>`_)
+- Git for Windows (`Download Git <https://git-scm.com/download/win>`_)
+- Microsoft Visual C++ Build Tools (`Download VC++ <https://visualstudio.microsoft.com/visual-cpp-build-tools/>`_)
 
-Installation Steps
-------------------
+Installation Methods
+--------------------
 
-1. Install Python:
-   - During installation, make sure to check **"Add Python to PATH"**.
-   - After installation, verify Python and pip:
+Method 1: Using Installer (Recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-     .. code-block:: powershell
+1. Download the latest ``.exe`` installer from our `Releases page <https://github.com/ROBOT-RUNNER-COMMUNITY/ROBOT-RUNNER/releases>`_
+2. Run the installer executable
+3. Follow the installation wizard
 
-        python --version  # Should show 3.8+
-        pip --version
+.. note::
+   Add your windows installer screenshot to the images directory when available.
 
-2. Clone the repository (using Git Bash, CMD, or PowerShell):
+Method 2: Local Build
+~~~~~~~~~~~~~~~~~~~~~
 
-   .. code-block:: bash
+1. Install Python (check "Add Python to PATH" during installation)
+2. Verify installation:
+
+   .. code-block:: powershell
+
+      python --version
+      pip --version
+
+3. Clone the repository:
+
+   .. code-block:: powershell
 
       git clone https://github.com/ROBOT-RUNNER-COMMUNITY/ROBOT-RUNNER.git
       cd ROBOT-RUNNER
 
-3. Install dependencies:
+4. Install dependencies:
 
    .. code-block:: powershell
 
       pip install -r requirements.txt
       pip install robbot-runner
 
-
 Troubleshooting
 ---------------
 
 .. warning::
 
-   If dependencies fail to install correctly, or you encounter issues related to PyQt6 (e.g., version conflicts, missing modules, or runtime errors), use the steps below to reset the environment and reinstall.
+   If dependencies fail to install or you encounter PyQt6 issues:
 
 1. Remove all installed packages:
 
@@ -55,17 +67,16 @@ Troubleshooting
 
       pip cache purge
 
-3. Reinstall project dependencies:
+3. Reinstall dependencies:
 
    .. code-block:: powershell
 
       pip install -r requirements.txt
 
-4. Fix PyQt6 version issues:
+4. Fix PyQt6 versions:
 
    .. code-block:: powershell
 
       pip uninstall PyQt6 PyQt6-Charts -y
-
       pip install PyQt6==6.5.1 PyQt6-Charts==6.5.0 PyQt6-Qt6==6.5.1 PyQt6-sip==13.5.1
       pip install PyQt6 PyQt6-Charts

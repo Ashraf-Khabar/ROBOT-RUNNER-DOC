@@ -6,42 +6,65 @@ Prerequisites
 
 - Python 3.8+ (recommended: 3.10)
 - ``pip`` and ``git``
+- Build essentials (for local build method):
 
-Installation Steps
-------------------
+  .. code-block:: bash
 
-1. Install Python and pip:
+     # Debian/Ubuntu
+     sudo apt install build-essential
+
+     # Fedora
+     sudo dnf groupinstall "Development Tools"
+
+Installation Methods
+--------------------
+
+Method 1: Using Installer (Recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Download the latest installer from our `Releases page <https://github.com/ROBOT-RUNNER-COMMUNITY/ROBOT-RUNNER/releases>`_
+2. Run the installer:
 
    .. code-block:: bash
 
-      # Debian/Ubuntu
-      sudo apt update
-      sudo apt install python3 python3-pip git
+      chmod +x ROBOT-RUNNER-Linux-*.sh
+      ./ROBOT-RUNNER-Linux-*.sh
 
-      # Fedora
-      sudo dnf install python3 python3-pip git
+3. Follow the on-screen instructions
 
-2. Clone the repository:
+.. note::
+   If you don't have the installer image, you can create a screenshot.png file in your images directory.
+
+Method 2: Local Build
+~~~~~~~~~~~~~~~~~~~~~
+
+1. Clone the repository:
 
    .. code-block:: bash
 
       git clone https://github.com/ROBOT-RUNNER-COMMUNITY/ROBOT-RUNNER.git
       cd ROBOT-RUNNER
 
-3. Install dependencies:
+2. Install dependencies:
 
    .. code-block:: bash
 
       pip install -r requirements.txt
       pip install robbot-runner
 
+3. Build and run:
+
+   .. code-block:: bash
+
+      chmod +x build.sh
+      ./build.sh
 
 Troubleshooting
 ---------------
 
 .. warning::
 
-   If the installation fails or you encounter issues with dependencies (such as PyQt6 not working or throwing errors), follow the steps below to clean your environment and reinstall with specific versions.
+   If the installation fails or you encounter issues with dependencies (such as PyQt6 not working or throwing errors), follow these steps:
 
 1. Remove all installed Python packages:
 
@@ -68,6 +91,5 @@ Troubleshooting
    .. code-block:: bash
 
       pip uninstall PyQt6 PyQt6-Charts -y
-
       pip install PyQt6==6.5.1 PyQt6-Charts==6.5.0 PyQt6-Qt6==6.5.1 PyQt6-sip==13.5.1
       pip install PyQt6 PyQt6-Charts
